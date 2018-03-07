@@ -2,4 +2,10 @@
 *.in
 *.gch
 *.o
+*.h
+*.co
+*.gcno
+*.gcda
+*.html
 kygerand
+coverage

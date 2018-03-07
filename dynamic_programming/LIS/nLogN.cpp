@@ -9,10 +9,9 @@ https://stackoverflow.com/questions/2631726/how-to-determine-the-longest-increas
 using namespace std;
 
 // returns the length of the LIS
-template <class T>
-int LISLength(vector<T> &v) {
+int LISLength(vector<int> &v) {
     int n = v.size();
-    set<T> s;
+    set<int> s;
     for (int i = 0; i < n; i++) {
         auto res = s.insert(v[i]);  // O(log(n))
         if (res.second) {
