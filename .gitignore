@@ -7,5 +7,7 @@
 *.gcno
 *.gcda
 *.html
+*.do
 kygerand
 coverage
+debug
