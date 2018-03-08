@@ -7,11 +7,11 @@ with open(filename, 'r') as f:
 includes = re.findall('^#include "[^"]+"', contents, re.MULTILINE)
 includes.extend(re.findall('^#include <[^>]+>', contents, re.MULTILINE))
 functions = re.findall("^\S+ \w+\([^)]*\)(?= {)", contents, re.MULTILINE)
-# print(contents)
-# print('\n'.join(includes))
-# print('\n'.join(functions))
+typedefs = re.findall("^typedef .+", contents, re.MULTILINE)
 res = [f'{x}\n' for x in includes]
 res.append("\nusing namespace std;\n\n")
-res.extend([f'{x};\n' for x in functions]);
+res.extend([f'{x}\n' for x in typedefs])
+res.append("\n")
+res.extend([f'{x};\n' for x in functions])
 with open(f'{filename[:-3]}h', 'w') as f:
     f.writelines(res)

@@ -12,13 +12,13 @@ h_files=$(source_files:%.cpp=%.h)
 
 all: build build_coverage
 
-build: $(s_obj) $(t_obj) h_files
+build: $(h_files) $(s_obj) $(t_obj)
 	$(CXX) $(CPPFLAGS) -o kygerand $(s_obj) $(t_obj)
 
-build_coverage: $(s_cov) $(t_cov) h_files
+build_coverage: $(h_files) $(s_cov) $(t_cov)
 	$(CXX) $(COV_FLAGS) -o coverage $(s_cov) $(t_cov)
 
-headers: h_files
+headers: $(h_files)
 
 %.h: %.cpp
 	./generate_header.py $^
@@ -46,3 +46,6 @@ clean: clean_coverage
 
 clean_coverage:
 	rm -f coverage code_coverage*.html $(shell find . -name "*.co" -or -name "*.gcno" -or -name "*.gcda" -or -name "*.gcov")
+
+clean_coverage_data:
+	rm -f code_coverage*.html $(shell find . -name "*.gcda")
