@@ -2,6 +2,7 @@
 reference:
 http://www.techiedelight.com/longest-increasing-subsequence/
 https://stackoverflow.com/questions/2631726/how-to-determine-the-longest-increasing-subsequence-using-dynamic-programming
+https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
 */
 #include <algorithm>
 #include <set>
@@ -44,4 +45,45 @@ int bsLISLength(vector<int> &v) {
         }
     }
     return length;
+}
+
+vector<int> LIS(vector<int> &v) {
+    int n = v.size();
+    if (!n) {
+        vector<int> empty{};
+        return empty;
+    }
+    vector<int> value(n);
+    vector<int> index(n);
+    vector<int> parent(n);
+
+    value[0] = v[0];
+    index[0] = 0;
+    int length = 1;
+    for (int i = 1; i < n; i++) {
+        if (v[i] < value[0]) {
+            value[0] = v[i];
+            index[0] = i;
+        } else if (v[i] > value[length - 1]) {
+            parent[i] = index[length - 1];
+            value[length] = v[i];
+            index[length++] = i;
+        } else {
+            auto it = lower_bound(value.begin(), value.begin() + length, v[i]);
+            int idx = it - value.begin();
+            parent[i] = index[idx - 1];
+            index[idx] = i;
+            value[idx] = v[i];
+        }
+    }
+
+    vector<int> lis(length);
+    int last = index[length - 1];
+    lis[length - 1] = v[last];
+    while (--length) {
+        last = parent[last];
+        lis[length - 1] = v[last];
+    }
+
+    return lis;
 }
