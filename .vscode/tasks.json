@@ -11,12 +11,30 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "make build"
+            "command": "make build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "coverage",
             "type": "shell",
             "command": "make coverage"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "make test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "headers",
+            "type": "shell",
+            "command": "make headers"
         }
     ],
 }
