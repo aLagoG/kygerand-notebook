@@ -60,7 +60,7 @@ TEST_CASE("1 -1 0", "[LIS]") {
     REQUIRE_THAT(LIS(v), Equals(lis));
 }
 
-TEST_CASE("1 3 2 4", "[LIS]") {
+TEST_CASE("1 6 5 4 3 2 7", "[LIS]") {
     vector<int> v{1, 6, 5, 4, 3, 2, 7};
     REQUIRE(setLISLength(v) == 3);
     REQUIRE(bsLISLength(v) == 3);
