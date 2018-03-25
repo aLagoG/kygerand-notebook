@@ -3,4 +3,5 @@
     "C_Cpp.intelliSenseEngine": "Default",
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
+    "python.pythonPath": "/home/delag/anaconda3/bin/python"
 }

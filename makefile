@@ -51,10 +51,11 @@ run_coverage: build_coverage
 	./coverage
 
 filter_coverage: run_coverage
-	rm -f $(shell find . -name "*test.gcda" -or -name "*test.gcno")
+	rm test.gcda test.gcno
+	./run_gcov.py
 
 coverage: filter_coverage
-	gcovr -r . --html --html-details -o code_coverage.html
+	gcovr -r . --html --html-details -o code_coverage.html -g
 
 clean: clean_coverage clean_debug
 	rm -f kygerand $(shell find . -name "*.o" -or -name "*.h")
