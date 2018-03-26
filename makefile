@@ -50,18 +50,14 @@ debug_test: build_debug
 run_coverage: build_coverage
 	./coverage
 
-filter_coverage: run_coverage
-	rm test.gcda test.gcno
-	./run_gcov.py
-
-coverage: filter_coverage
-	gcovr -r . --html --html-details -o code_coverage.html -g
+coverage: run_coverage
+	gcovr -r . --html --html-details -o code_coverage.html --gcov-exclude "#" --gcov-exclude ".*test" --gcov-exclude ".*catch\.hpp"
 
 clean: clean_coverage clean_debug
 	rm -f kygerand $(shell find . -name "*.o" -or -name "*.h")
 
 clean_coverage: clean_coverage_data
-	rm -f coverage code_coverage*.html $(shell find . -name "*.co" -or -name "*.gcno" -or -name "*.gcov")
+	rm -f coverage $(shell find . -name "*.co" -or -name "*.gcno" -or -name "*.gcov")
 
 clean_coverage_data:
 	rm -f code_coverage*.html $(shell find . -name "*.gcda")
