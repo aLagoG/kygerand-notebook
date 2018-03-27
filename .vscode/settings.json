@@ -3,5 +3,11 @@
     "C_Cpp.intelliSenseEngine": "Default",
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
-    "python.pythonPath": "/home/delag/anaconda3/bin/python"
+    "python.pythonPath": "/home/delag/anaconda3/bin/python",
+    "files.associations": {
+        "*.jsonc": "jsonc",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp"
+    }
 }
