@@ -50,8 +50,11 @@ debug_test: build_debug
 run_coverage: build_coverage
 	./coverage
 
-coverage: run_coverage
+report_coverage: run_coverage
 	gcovr -r . --html --html-details -o code_coverage.html --gcov-exclude "#" --gcov-exclude ".*test" --gcov-exclude ".*catch\.hpp"
+
+coverage: report_coverage
+	rm -f *.gcov
 
 clean: clean_coverage clean_debug
 	rm -f kygerand $(shell find . -name "*.o" -or -name "*.h")
