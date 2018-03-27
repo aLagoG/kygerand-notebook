@@ -1,6 +1,6 @@
 CXX=g++
 CPPFLAGS=-std=c++11 -I$(shell pwd)
-COV_FLAGS=$(CPPFLAGS) -fprofile-arcs -ftest-coverage -g
+COV_FLAGS=$(CPPFLAGS) -fprofile-arcs -ftest-coverage -g -O0
 DEBUG_FLAGS=$(CPPFLAGS) -g
 
 source_files=$(shell find . -not -name "*test.cpp" -name "*.cpp")
