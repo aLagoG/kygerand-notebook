@@ -7,7 +7,9 @@ class FenwickTree {
     vector<int> tree;
 
    public:
-    FenwickTree() {}
+    FenwickTree(int n) {
+        tree.resize(n + 1);
+    }
     FenwickTree(vector<int> &v) {
         int n = v.size();
         tree.resize(n + 1);
