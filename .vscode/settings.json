@@ -3,4 +3,7 @@
     "C_Cpp.intelliSenseEngine": "Default",
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
+    "files.associations": {
+        "set": "cpp"
+    },
 }
