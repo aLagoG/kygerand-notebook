@@ -6,4 +6,12 @@
     "files.associations": {
         "set": "cpp"
     },
+    "python.pythonPath": "/home/delag/anaconda3/bin/python",
+    "files.associations": {
+        "*.jsonc": "jsonc",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "*.tcc": "cpp"
+    }
 }

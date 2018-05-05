@@ -67,3 +67,11 @@ TEST_CASE("1 6 5 4 3 2 7", "[LIS]") {
     vector<int> lis{1, 2, 7};
     REQUIRE_THAT(LIS(v), Equals(lis));
 }
+
+TEST_CASE("3 4 1 2 3", "[LIS]") {
+    vector<int> v{3, 4, 1, 2, 3};
+    REQUIRE(setLISLength(v) == 3);
+    REQUIRE(bsLISLength(v) == 3);
+    vector<int> lis{1, 2, 3};
+    REQUIRE_THAT(LIS(v), Equals(lis));
+}

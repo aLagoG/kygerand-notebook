@@ -8,7 +8,8 @@ includes = re.findall('^#include "[^"]+"', contents, re.MULTILINE)
 includes.extend(re.findall('^#include <[^>]+>', contents, re.MULTILINE))
 functions = re.findall("^\S+ \w+\([^)]*\)(?= {)", contents, re.MULTILINE)
 typedefs = re.findall("^typedef .+", contents, re.MULTILINE)
-res = [f'{x}\n' for x in includes]
+res = ['#pragma once\n\n']
+res.extend([f'{x}\n' for x in includes])
 res.append("\nusing namespace std;\n\n")
 res.extend([f'{x}\n' for x in typedefs])
 res.append("\n")
