@@ -1,0 +1,10 @@
+BasedOnStyle: Chromium
+AlignAfterOpenBracket: Align
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+IndentWidth: 4
+# NamespaceIndentation: All
+Standard: Cpp11

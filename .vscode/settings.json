@@ -1,17 +1,17 @@
 {
-    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, AllowShortBlocksOnASingleLine: false, AllowShortFunctionsOnASingleLine: Empty, IndentWidth: 4}",
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Chromium, AllowShortBlocksOnASingleLine: false, AllowShortFunctionsOnASingleLine: Empty, IndentWidth: 4}",
     "C_Cpp.intelliSenseEngine": "Default",
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
-    "files.associations": {
-        "set": "cpp"
-    },
     "python.pythonPath": "/home/delag/anaconda3/bin/python",
     "files.associations": {
         "*.jsonc": "jsonc",
         "ratio": "cpp",
         "system_error": "cpp",
         "type_traits": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "set": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp"
     }
 }

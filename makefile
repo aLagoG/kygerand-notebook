@@ -1,5 +1,5 @@
-CXX=g++
-CPPFLAGS=-std=c++11 -I$(shell pwd)
+CXX=g++-8
+CPPFLAGS=-std=c++14 -I$(shell pwd)
 COV_FLAGS=$(CPPFLAGS) -fprofile-arcs -ftest-coverage -g -O0
 DEBUG_FLAGS=$(CPPFLAGS) -g
 

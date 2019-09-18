@@ -36,5 +36,5 @@
             "type": "shell",
             "command": "make headers"
         }
-    ],
+    ]
 }
